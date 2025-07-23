@@ -1,0 +1,264 @@
+<!DOCTYPE html>  
+<html lang="es"> <!-- idioma español  -->
+<head>
+    <meta charset="UTF-8"> <!-- tildes  -->
+    <title> auto equip de leon   </title>  <!--  titulo o nombre de la pagina -->
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        header {
+            background-image: url('https://www.shutterstock.com/image-illustration/sci-fi-neon-glowing-blue-260nw-1847878393.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px 20px;
+            text-align: center; 
+        }
+        header h1 {
+            background-color: rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        .contenedor {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .producto {
+            background-color: white;
+            width: 300px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        .producto:hover {
+            transform: scale(1.03);
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        h2 {
+            font-size: 20px;
+            color: #333;
+        }
+        p {
+            font-size: 14px;
+            color: #555;
+        }
+        .boton-compra {
+            background-color: #27ae60;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .boton-compra:hover {
+            background-color: #219150;
+        }
+        .contacto {
+            text-align: center;
+            padding: 20px;
+            background-color: #ecf0f1;
+        }
+        .contacto a {
+            text-decoration: none;
+            margin: 0 15px;
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        .contacto a:hover {
+            color: #2980b9;
+        }
+
+        /* Estilos para ventana emergente */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+        .popup-contenido {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 400px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            animation: entrada 0.5s ease;
+        }
+        .popup-contenido img {
+            width: 80px;
+            margin-bottom: 15px;
+        }
+        .popup-contenido h2 {
+            margin: 0 0 10px 0;
+        }
+        .cerrar {
+            margin-top: 15px;
+            padding: 8px 20px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        @keyframes entrada {
+            from { transform: scale(0.7); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>AUTO EQUIP DE LEON </h1>
+</header>
+
+<section class="contenedor">
+
+    <div class="producto">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7gqRJN48xex-rKv5Q-eQ120nMME1MnnBvlw&s" alt="Laptop HP">
+        <h2>Rines cromo black</h2>
+        <p><strong>Q3,500</strong></p>
+        <p>RIN  CROMO, AOS DE DIFERENTES MEDIADAS BLAK PARA DIFERENTES TIPOS DE VEHICULOS ANCHO 10 PLGADAS</p>
+        <button class="boton-compra" onclick="mostrarPopup('AROS CROMO BLAK')">Comprar</button>
+    </div>
+
+    <div class="producto">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTac4yJrZtXyrBqVlJbPDvwzuYGPiRvZVAcqQ&s" alt="Laptop Dell">
+        <h2>LLANATS PIRELLI</h2>
+        <p><strong>Q2,800</strong></p>
+        <p>4*4 DOBLE USO CAUCHO DE 10, PLIEGOS DE DIFENTES MEDIDAS </p>
+        <button class="boton-compra" onclick="mostrarPopup('PIRELLI 4*4')">Comprar</button>
+    </div>
+
+    <div class="producto">
+        <img src=" https://clasicdn.paraguay.com/pictures/2023/01/08/2170335/8741977L.webp" alt="Llantas giti ">
+        <h2>GITI 4*4 doble SRVICIO  </h2>
+        <p><strong>Q1,200</strong></p>
+        <p>4*4 A/T DOBLE USO CAUCHO DE 8 PLIEGOS </p>
+        <button class="boton-compra" onclick="mostrarPopup('GITI 4*4')">Comprar</button>
+    </div>
+
+	<div class="producto">
+        <img src=" https://www.lubricantesanmiguel.cl/wp-content/uploads/2021/04/productos-lubricantesanmiguel-cambiodeaceite-afinamiento-principal-1024x512.png" alt="LUBRICA TU AUTOMOVIL">
+        <h2>LUBRICANTES ACEITEES PARA MOTOR FILTRO 2*1 </h2>
+        <p><strong>Q400</strong></p>
+        <p>LUBRICANTES ACETES POR GALON Y POR LITRO  </p>
+        <button class="boton-compra" onclick="mostrarPopup('ACEITE Y FITROS')">Comprar</button>
+    </div>
+	
+	   <div class="producto">
+        <img src=" https://igardi.com/wp-content/uploads/2022/03/shutterstock_1795416499.jpg" alt="BOSH ">
+        <h2>BALANCEADORA DE LANTAS </h2>
+        <p><strong>Q18,200</strong></p>
+        <p>BALANCEADORA DE LLANTAS Y NIVELADORA  </p>
+        <button class="boton-compra" onclick="mostrarPopup('BALANCEADORA igardi')">Comprar</button>
+    </div>
+
+	   <div class="producto">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAzlrtJ6kQEo5yChJbPHaiOBiJ1WZCYM2b0QRBUT5EKBroPeuRZfPxQhc_wYlXxhgpGqI&usqp=CAU" alt="CORONAS RACING ">
+        <h2> GATO HIDRAULICO </h2>
+        <p><strong>Q1,600</strong></p>
+        <p>GATO HIDAULICO DE 5TO. 8TO. FERFIL BAJO  </p>
+        <button class="boton-compra" onclick="mostrarPopup('HIDAULICO PISTON')">Comprar</button>
+    </div>
+
+	   <div class="producto">
+        <img src="https://m.media-amazon.com/images/I/61R8MU4ERlL.jpg" alt="TRUK USA  ">
+        <h2> PISTOLA DE IMPCATO TRUK USA </h2>
+        <p><strong>Q1,300</strong></p>
+        <p>PISTOLA DE IMPACTO DE 5 VELOCIDADES CON DOBLE TROQUE  </p>
+        <button class="boton-compra" onclick="mostrarPopup('PISTOLA DE IMPACTO')">Comprar</button>
+    </div>
+
+	<div class="producto">
+        <img src="https://m.media-amazon.com/images/I/41SSBZPy5xL.jpg" alt="AIR COMPRESOR  ">
+        <h2> CHIMBO DE AIRE  </h2>
+        <p><strong>Q5,300</strong></p>
+        <p>CHIMBO DE AIRE DE 5 GALONES LLENADO AUTROMATICO   </p>
+        <button class="boton-compra" onclick="mostrarPopup('AIR COMPRESOR ')">Comprar</button>
+    </div>
+
+	<div class="producto">
+        <img src="https://valsur.com/empresa/app/uploads/guia-como-elegir-compresor-aire-industrial-2-1113x582.jpg" alt="AIR COMPRESOR  ">
+        <h2> COMPRESOR DE AIRE  </h2>
+        <p><strong>Q18,300</strong></p>
+        <p>COMPRESOR DE AIRE DE 60 GALONES LLENADO AUTROMATICO   </p>
+        <button class="boton-compra" onclick="mostrarPopup('AIR COMPRESOR ')">Comprar</button>
+    </div>
+
+	<div class="producto">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQmHZgn0i9DywgnAxgFnH5QS2LcT-c0YA4AA&s" alt="PARRILLAS  ">
+        <h2> Carroseria FG  </h2>
+        <p><strong>Q538</strong></p>
+        <p>PARRILLA, DEFENSA Y ROLL BAR  </p>
+        <button class="boton-compra" onclick="mostrarPopup('ROLL BAR ')">Comprar</button>
+    </div>
+
+	<div class="producto">
+        <img src="https://fileunouno.com/file/2024/01/24/20240124012715EHABU4.jpg" alt="FAROS  ">
+        <h2> FAROS EXPLORADORAS  </h2>
+        <p><strong>Q138</strong></p>
+        <p>EXPLORADORAS FAROL DOBLE USO </p>
+        <button class="boton-compra" onclick="mostrarPopup('EXPLORADORAS  ')">Comprar</button>
+    </div>
+
+	<div class="producto">
+        <img src="https://m.media-amazon.com/images/I/71wlLMJSa1L._AC_SL1500_.jpg" alt="PANTALLA  ">
+        <h2> PANTALLAS RETRACTIL TACTIC  </h2>
+        <p><strong>Q890</strong></p>
+        <p>PANTALLAS UNIVERSALES TATIC </p>
+        <button class="boton-compra" onclick="mostrarPopup('PANTALLAS ')">Comprar</button>
+    </div>
+
+</section>
+
+<div class="contacto">
+    <h3>Contáctanos</h3>
+    <a href="https://wa.me/50238463273" target="_blank">📱 WhatsApp</a>
+    <a href="antonioalexcobomatomcobo@gmail.com">📧 Correo</a>
+    <a href="tel:+50238463273">📞 Llamada</a>
+</div>
+
+
+<div class="popup" id="popup">
+    <div class="popup-contenido">
+        <img src="https://i.imgur.com/U9dFIdh.png" alt="Éxito">
+        <h2>¡Compra realizada!</h2>
+        <p id="mensajeProducto"></p>
+        <button class="cerrar" onclick="cerrarPopup()">Aceptar</button>
+    </div>
+</div>
+
+<script>
+    function mostrarPopup(producto) {
+        document.getElementById("mensajeProducto").innerText = "Has comprado: " + producto + ". Te contactaremos pronto.";
+        document.getElementById("popup").style.display = "flex";
+    }
+
+    function cerrarPopup() {
+        document.getElementById("popup").style.display = "none";
+    }
+</script>
+
+</body>
+</html>
